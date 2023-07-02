@@ -1,0 +1,39 @@
+﻿
+@page
+@using YourProjectNamespace.Pages.Account;
+@model ListModel
+@{
+    ViewData["Title"] = "List";
+}
+
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+            $('#userTable').DataTable();
+        });
+    </script>
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<table id="userTable" class="table">
+    <thead>
+        <tr>
+            <th>Username</th>
+            <th>Email</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var user in Model.registers)
+        {
+            <tr>
+                
+                <td>@user.Email</td>
+                <td>@user.Address</td>
+                <td>@user.FullName</td>
+               
+
+            </tr>
+        }
+    </tbody>
+</table>
