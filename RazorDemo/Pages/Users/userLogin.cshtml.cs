@@ -12,13 +12,13 @@ namespace RazorDemo.Pages.Users
 {
     public class userLoginModel : PageModel
     {
-        private readonly SignInManager<ApplicationUser> _signInManager;
+        private readonly SignInManager<IdentityUser> _signInManager;
         private readonly RDbContext _dbContext;
 
         [BindProperty]
         public newLogin Input { get; set; }
 
-        public userLoginModel(SignInManager<ApplicationUser> signInManager, RDbContext dbContext)
+        public userLoginModel(SignInManager<IdentityUser> signInManager, RDbContext dbContext)
         {
             _signInManager = signInManager;
             _dbContext = dbContext;
